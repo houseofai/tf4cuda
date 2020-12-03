@@ -1,3 +1,3 @@
 tensorflow/
-package/*.whl
+packages/**.whl
 .idea/
