@@ -27,9 +27,9 @@ fi
 # Configure the build
 #RUN ./configure
 
-# Build the pip package
+# Build the pip packages
 bazel build --jobs="$N_JOBS" //tensorflow/tools/pip_package:build_pip_package
 
-# Build the package
+# Build the packages
 ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 
