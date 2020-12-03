@@ -15,9 +15,11 @@ To start, you can use:
 Use the Docker Run command to compile and generate a Tensorflow PIP package for Cuda 11.1 
 
 To configure the compilation parameters, 
- - TF_VERSION: Tensorflow branch. Default to master
- - PYTHON_VERSION: Python version. Default to 3.9
- - N_JOBS: Number of Bazel Jobs. Default to 12 (Should be less than the maximum number of the CPU threads)
+ - **TF_VERSION**: Tensorflow branch. Default to master
+ - **PYTHON_VERSION**: Python version. Default to 3.9
+ - **N_JOBS**: Number of Bazel Jobs. Default to 12 (Should be less than the maximum number of the CPU threads)
+ 
+#### 1. Run the image
 ```
 docker run -it --rm -v $PWD:/tmp/tensorflow_pkg odyssee/tf4cuda
 ```
@@ -35,6 +37,7 @@ For example, for Tensorflow 2.5.0 and python 3.9, the generated package is:
 ```
 tensorflow-2.5.0-cp39-cp39-linux_x86_64.whl
 ```
+#### 2. Install the package
 Finally, you can install it using PIP:
 ```
 pip install tensorflow-2.5.0-cp39-cp39-linux_x86_64.whl
@@ -42,10 +45,10 @@ pip install tensorflow-2.5.0-cp39-cp39-linux_x86_64.whl
 
 ## Build the Docker image for Tensorflow with a custom Cuda version
 By default, this image uses:
- - CUDA_VERSION: Cuda version. Default to 11.1
- - CUDNN_VERSION: CuDNN version. Default to 8
- - UBUNTU_VERSION: Ubuntu version. Default to 18.04
- - PYTHON_VERSION: Python version for installing PIP packages. Default to 3.6
+ - **CUDA_VERSION**: Cuda version. Default to 11.1
+ - **CUDNN_VERSION**: CuDNN version. Default to 8
+ - **UBUNTU_VERSION**: Ubuntu version. Default to 18.04
+ - **PYTHON_VERSION**: Python version for installing PIP packages. Default to 3.6
 ```
 docker build -t tf4cuda .
 ```
