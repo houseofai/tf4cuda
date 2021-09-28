@@ -2,7 +2,6 @@
 
 # shellcheck disable=SC2139
 #alias python="/usr/bin/python${PYTHON_VERSION}"
-update-alternatives --install /usr/bin/python python /usr/bin/python"${PYTHON_VERSION}" 1
 update-alternatives --install /usr/bin/python3 python3 /usr/bin/python"${PYTHON_VERSION}" 1
 #update-alternatives --set python /usr/bin/python"${PYTHON_VERSION}"
 
@@ -29,6 +28,9 @@ fi
 
 # Build the pip packages
 bazel build --jobs="$N_JOBS" //tensorflow/tools/pip_package:build_pip_package
+
+#
+update-alternatives --install /usr/bin/python python /usr/bin/python"${PYTHON_VERSION}" 1
 
 # Build the packages
 ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg

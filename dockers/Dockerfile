@@ -12,6 +12,7 @@ ENV NVIDIA_VISIBLE_DEVICES all
 ENV PATH="/root/.local/bin:${PATH}"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ="Europe/Paris"
+ENV TF_VERSION=master
 
 # Update APT Cache
 RUN apt-get update
@@ -27,6 +28,7 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python$PYTHON_
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python"${PYTHON_VERSION}" 1
 
 RUN apt-get -y install python3-dev python3-pip
+#RUN python -m pip install --upgrade pip
 COPY ${TF_PACKAGE} .
 RUN python3 -m pip install ${TF_PACKAGE}
 

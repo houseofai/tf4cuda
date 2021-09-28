@@ -23,11 +23,11 @@ To configure the compilation parameters,
 ```
 docker run -it --rm -v $PWD:/tmp/tensorflow_pkg odyssee/tf4cuda
 ```
-To change the parameters, add `-e`, to the command line. For example, to build the PIP package for tensorflow 2.4.0rc3
+To change the parameters, add `-e`, to the command line. For example, to build the PIP package for tensorflow 2.4.0-rc3
 ```
-docker run -it --rm -v $PWD:/tmp/tensorflow_pkg -e TF_VERSION=v2.4.0rc3  odyssee/tf4cuda
+docker run -it --rm -v $PWD:/tmp/tensorflow_pkg -e TF_VERSION=v2.4.0-rc3  odyssee/tf4cuda
 ```
-*Note: The Tensorflow tag is used as the parameter. For version 2.4.0rc3, the tag is 'v2.4.0rc3'. Check the Tensorflow Github tags for more information*
+*Note: The Tensorflow tag is used as the parameter. For version 2.4.0-rc3, the tag is 'v2.4.0-rc3'. Check the Tensorflow Github tags for more information*
 
 Once finished, the docker image builds a PIP package in the current directory, named:
 ```
